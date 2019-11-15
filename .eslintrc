@@ -10,7 +10,7 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.test.json"
   },
   "rules": {
     // note you must disable the base rule as it can report incorrect errors
