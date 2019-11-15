@@ -46,3 +46,6 @@ formatter.stacks({ cleanStackPaths: boolean });
 ``
 
 ## Examples
+
+Preset cli dev
+![CLI dev example](/screenshots/example-cli-dev.png?raw=true "CLI dev example")
