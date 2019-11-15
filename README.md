@@ -10,7 +10,7 @@ Format winston logging in a human readable format
 
 You can either use the formatters directly or use one of the presets
 
-``typescript
+```typescript
 import { transports, createLogger } from 'winston';
 import { presets } from 'winston-humanize-formatter';
 
@@ -21,20 +21,20 @@ createLogger({
     new transports.Console()
   ]
 });
-``
+```
 
 ### available presets
 
-``typescript
+```typescript
 import { presets } from 'winston-humanize-formatter';
 
 presets.cli.dev;
 presets.cli.prod;
-``
+```
 
 ### available formatters
 
-``typescript
+```typescript
 import { formatter } from 'winston-humanize-formatter';
 
 formatter.colorize({ keys: string[] });
@@ -43,7 +43,7 @@ formatter.multiline({ keys: string[] });
 formatter.padLevels({ keys: string[] });
 formatter.prettyJson({ excludeKeys: string[], colorize?: boolean, depth?: number });
 formatter.stacks({ cleanStackPaths: boolean });
-``
+```
 
 ## Examples
 
