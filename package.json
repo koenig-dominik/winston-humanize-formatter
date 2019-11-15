@@ -21,7 +21,8 @@
   "scripts": {
     "lint": "eslint src test --ext .ts",
     "test": "npm run lint && ts-node test/index.ts",
-    "build": "npm run test && tsc"
+    "build": "npm run test && tsc",
+    "prepublish": "npm run build"
   },
   "main": "dist/index.js",
   "types" : "dist/index.d.ts",
