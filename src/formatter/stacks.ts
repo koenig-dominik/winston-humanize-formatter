@@ -1,8 +1,16 @@
 import { Format, TransformableInfo } from 'logform';
 
+export interface Options {
+  cleanStackPaths: boolean;
+}
+
 export const STACKS = 'stacks';
 
+const workingDirectory = process.env.INIT_CWD as string;
+
 export class Stacks implements Format {
+
+  constructor(private opts: Options) {}
 
   transform(info: TransformableInfo): TransformableInfo {
 
@@ -15,7 +23,12 @@ export class Stacks implements Format {
           info[STACKS] = [];
         }
 
-        info[STACKS].push(error.stack);
+        let stack = error.stack as string;
+        if(this.opts.cleanStackPaths) {
+          stack = stack.split(workingDirectory).join('.');
+        }
+
+        info[STACKS].push(stack);
       }
     }
 
@@ -24,4 +37,4 @@ export class Stacks implements Format {
 
 }
 
-export const stacks = (): Format => new Stacks();
+export const stacks = (opts: Options): Format => new Stacks(opts);

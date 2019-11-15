@@ -42,7 +42,7 @@ formatter.join({ keys: string[] });
 formatter.multiline({ keys: string[] });
 formatter.padLevels({ keys: string[] });
 formatter.prettyJson({ excludeKeys: string[], colorize?: boolean, depth?: number });
-formatter.stacks();
+formatter.stacks({ cleanStackPaths: boolean });
 ``
 
 ## Examples

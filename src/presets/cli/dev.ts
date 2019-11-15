@@ -10,7 +10,7 @@ const keys = [
 ];
 
 export const dev = format.combine(
-  formatter.stacks(),
+  formatter.stacks({ cleanStackPaths: true }),
   formatter.padLevels({ keys }),
   formatter.colorize({ keys: [...keys, STACKS] }),
   formatter.join({ keys }),

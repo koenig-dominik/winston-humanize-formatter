@@ -11,7 +11,7 @@ const keys = [
 
 export const prod = format.combine(
   format.timestamp({format: 'YYYY-MM-DD HH:mm:ss.SSS ZZ'}),
-  formatter.stacks(),
+  formatter.stacks({ cleanStackPaths: false }),
   formatter.padLevels({ keys }),
   formatter.join({ keys }),
   formatter.prettyJson({ excludeKeys: [...keys, STACKS] }),
