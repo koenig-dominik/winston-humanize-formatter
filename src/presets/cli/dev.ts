@@ -2,12 +2,12 @@ import { format } from 'winston';
 import { formatter } from '../../formatter';
 import { STACKS } from '../../formatter/stacks';
 import { PRETTY_JSON } from '../../formatter/pretty-json';
-import { MESSAGE } from 'triple-beam';
 
 const keys = [
   'level',
   'label'
 ];
+const MESSAGE = 'message';
 
 export const dev = format.combine(
   formatter.stacks({ cleanStackPaths: true }),

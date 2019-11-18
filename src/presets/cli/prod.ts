@@ -1,13 +1,13 @@
 import { format } from 'winston';
 import { formatter } from '../../formatter';
 import { STACKS } from '../../formatter/stacks';
-import { MESSAGE } from 'triple-beam';
 
 const keys = [
   'level',
   'timestamp',
   'label'
 ];
+const MESSAGE = 'message';
 
 export const prod = format.combine(
   format.timestamp({format: 'YYYY-MM-DD HH:mm:ss.SSS ZZ'}),
