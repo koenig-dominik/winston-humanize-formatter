@@ -1,19 +1,19 @@
 import { format } from 'winston';
 import { formatter } from '../../formatter';
 import { STACKS } from '../../formatter/stacks';
+import { MESSAGE } from 'triple-beam';
 
 const keys = [
   'level',
   'timestamp',
-  'label',
-  'message'
+  'label'
 ];
 
 export const prod = format.combine(
   format.timestamp({format: 'YYYY-MM-DD HH:mm:ss.SSS ZZ'}),
   formatter.stacks({ cleanStackPaths: false }),
   formatter.padLevels({ keys }),
-  formatter.join({ keys }),
-  formatter.prettyJson({ excludeKeys: [...keys, STACKS] }),
+  formatter.join({ keys: [...keys, MESSAGE] }),
+  formatter.prettyJson({ excludeKeys: [...keys, STACKS, MESSAGE] }),
   formatter.multiline({ keys: [STACKS] })
 );
